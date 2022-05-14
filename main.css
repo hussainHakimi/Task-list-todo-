@@ -104,6 +104,10 @@ main{
     margin-bottom: 1rem;
 }
 
+#tasks .task .content{
+    flex:1 1 0%;
+}
+
 #tasks .task .content .text{
     color: #fff;
     font-size: 1.125rem;
@@ -144,4 +148,23 @@ main{
 }
 .task .actions .delete{
     color: crimson;
+}
+
+.clear-all, .delete-done-task{
+    background-color: var(--darkest);
+    color: #fff;
+    padding: .6rem;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-weight: 700;
+    margin-right: 1rem;
+}
+
+.clear-all:hover, .delete-done-task:hover{
+    opacity: 0.8;
+}
+
+
+.clear-all:active, .delete-done-task:active{
+    opacity: 0.6;
 }
