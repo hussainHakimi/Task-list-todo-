@@ -41,7 +41,7 @@ header h1{
     display: flex;
 }
 input, button{
-    appearance: none;
+    /* appearance: none; */
     border: none;
     background:none;
     outline: none;
@@ -102,6 +102,7 @@ main{
     padding: 1rem;
     border-radius: 1rem;
     margin-bottom: 1rem;
+    position: relative;
 }
 
 #tasks .task .content{
@@ -148,6 +149,14 @@ main{
 }
 .task .actions .delete{
     color: crimson;
+}
+.checkbox{
+    cursor: pointer;
+    width: 17px;
+    height: 17px;
+    position: absolute;
+    right: 189px;
+    top: 18px;
 }
 
 .clear-all, .delete-done-task{

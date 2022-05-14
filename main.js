@@ -3,9 +3,10 @@ window.addEventListener('load', () =>{
     const input = document.getElementById('new-task-input');
     const list_el = document.getElementById('tasks');
 
+
     form.addEventListener('submit', (e) => {
         e.preventDefault();
-
+        
         const task = input.value;
 
         if(!task){
@@ -36,17 +37,22 @@ window.addEventListener('load', () =>{
         const task_edit_btn = document.createElement('button');
         task_edit_btn.classList.add('edit');
         task_edit_btn.innerHTML = 'Edit';
-
+        
         const task_delete_btn = document.createElement('button');
         task_delete_btn.classList.add('delete');
         task_delete_btn.innerHTML = 'Delete';
-
+        
+        const task_check_btn = document.createElement('input');
+        task_check_btn.classList.add('checkbox');
+        task_check_btn.type = 'checkbox';
+                
         task_actions_el.appendChild(task_edit_btn);
         task_actions_el.appendChild(task_delete_btn);
+        task_actions_el.appendChild(task_check_btn);
         
         task_el.appendChild(task_actions_el);
         list_el.appendChild(task_el);
-
+        
         input.value = '';
 
         // Start of Edit button.
@@ -66,14 +72,25 @@ window.addEventListener('load', () =>{
         task_delete_btn.addEventListener('click', () => {
             list_el.removeChild(task_el);
         });
-    });
-
-
-    // start of delete more Buttons
-    const clear_all = document.querySelector('.clear-all');
-    clear_all.addEventListener('click', () => {
-        list_el.remove();
-        document.location.reload(true);
-    });
+        
+        task_check_btn.addEventListener('click', () => {
+            task_check_btn.setAttribute('checked', true);
+        });
+        
+        // start of delete more Buttons
+        const clear_all = document.querySelector('.clear-all');
+        clear_all.addEventListener('click', () => {
+            list_el.remove();
+            document.location.reload(true);
+        });
     
+        const clear_done_tasks = document.querySelector('.delete-done-task');
+        clear_done_tasks.addEventListener('click', () => {
+                const checked_value = task_check_btn.getAttribute('checked');
+                    if(checked_value){
+                        task_el.remove();
+                    }            
+        });      
+    });
+
 });
