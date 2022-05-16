@@ -111,8 +111,6 @@ window.addEventListener('load', () =>{
                     clear_all.style.setProperty('color', dataColor);
                     clear_done_tasks.style.setProperty('background', '#ccc');
                     clear_done_tasks.style.setProperty('color', dataColor);
-                    task_el.style.setProperty('background', '#eee');
-                    task_input_el.style.setProperty('color', dataColor);
 
                 
             });
