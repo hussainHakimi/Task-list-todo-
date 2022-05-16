@@ -2,18 +2,23 @@ window.addEventListener('load', () =>{
     const form = document.getElementById('new-task-form');
     const input = document.getElementById('new-task-input');
     const list_el = document.getElementById('tasks');
-
-
+    const header = document.querySelector('header');    
+    const main = document.querySelector('main');
+    const submit = document.getElementById('new-task-submit');
+    const clear_all = document.querySelector('.clear-all');
+    const clear_done_tasks = document.querySelector('.delete-done-task');
+    
+    
     form.addEventListener('submit', (e) => {
         e.preventDefault();
         
         const task = input.value;
-
+        
         if(!task){
             alert('please input a title!');
             return;
         }
-
+        
         const task_el = document.createElement('div');
         task_el.classList.add('task');
 
@@ -78,13 +83,11 @@ window.addEventListener('load', () =>{
         });
         
         // start of delete more Buttons
-        const clear_all = document.querySelector('.clear-all');
         clear_all.addEventListener('click', () => {
             list_el.remove();
             document.location.reload(true);
         });
     
-        const clear_done_tasks = document.querySelector('.delete-done-task');
         clear_done_tasks.addEventListener('click', () => {
                 const checked_value = task_check_btn.getAttribute('checked');
                     if(checked_value){
@@ -92,5 +95,30 @@ window.addEventListener('load', () =>{
                     }            
         });      
     });
+
+    let themeButtons = document.querySelectorAll('.theme-buttons');
+        themeButtons.forEach(color => {
+            color.addEventListener('click', () => {
+                let dataColor = color.getAttribute('data-color');
+                document.querySelector('body').style.setProperty('background', dataColor);
+
+                
+                    header.querySelector('h1').style.setProperty('color', 'white');
+                    main.querySelector('h2').style.setProperty('color', 'white');
+                    submit.style.setProperty('color', 'white');
+                    input.style.setProperty('background', '#ccc');
+                    clear_all.style.setProperty('background', '#ccc');
+                    clear_all.style.setProperty('color', dataColor);
+                    clear_done_tasks.style.setProperty('background', '#ccc');
+                    clear_done_tasks.style.setProperty('color', dataColor);
+                    task_el.style.setProperty('background', '#eee');
+                    task_input_el.style.setProperty('color', dataColor);
+
+                
+            });
+    });
+
+
+
 
 });

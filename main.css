@@ -17,9 +17,10 @@
 body{
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
+    min-height: 105vh;
     background: var(--dark);
     color:#fff;
+    padding: 0;
 }
 
 header{
@@ -80,7 +81,7 @@ input, button{
 
 
 main{
-    flex:1 1 0%;
+    flex:.9 1 0%;
     max-width: 800px;
     width: 100%;
     margin: 0 auto;
@@ -176,4 +177,29 @@ main{
 
 .clear-all:active, .delete-done-task:active{
     opacity: 0.6;
+}
+
+
+/* =========================== Style for Coloring=========================== */
+
+.color-switcher{
+    width: 100%;
+    height: 50px    ;
+    background: #111827;
+    position: fixed;
+    bottom: 0;
+}
+.color-switcher .theme-button-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.color-switcher .theme-button-container .theme-buttons{
+    display: block;
+    height: 35px;
+    width: 35px;
+    border-radius: 50%;
+    margin: 5px;
+    cursor: pointer;
 }
