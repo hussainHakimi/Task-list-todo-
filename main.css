@@ -3,7 +3,7 @@
     --darker:#1f2937;
     --darkest:#111827;
     --light:#eee;
-    --gray:#6B7280;
+    --gray:#535b6a;
     --pink:#EC4899;
     --purple:#8B5Cf6;
 }
@@ -33,7 +33,7 @@ header{
 header h1{
     font-size: 2.5rem;
     border-bottom: 1rem;
-    font-weight: 300;
+    font-weight: 700;
     color: var(--gray);
     margin-bottom: 1rem;
 }
@@ -63,13 +63,14 @@ input, button{
 
 #new-task-submit{
     color: var(--pink);
+    background: #183a73;
     font-size: 1.25rem;
     font-weight: 700;
-    background-image: linear-gradient(to right, var(--pink), var(--purple));
-    -webkit-background-clip: text;
-    -wibkit-text-fill-color: transparent;
     cursor: pointer;
     transition: 0.4s;
+    border: 1px solid #ccc;
+    border-radius: 15px;
+    padding: 10px 5px;
 }
 
 #new-task-submit:hover{
